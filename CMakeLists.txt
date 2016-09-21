@@ -16,7 +16,7 @@ set(BASE_LOCATION .)
 ##### Project Setup #####
 
 # Set our output target
-set(TARGET FSMGenerator)
+set(TARGET MLLibrary)
 
 # Configure project and languages
 project(${TARGET} C CXX ASM)
