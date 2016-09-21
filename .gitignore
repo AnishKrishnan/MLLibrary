@@ -29,3 +29,6 @@
 *.app
 
 build/*
+
+test/build/*
+test/googletest/*
