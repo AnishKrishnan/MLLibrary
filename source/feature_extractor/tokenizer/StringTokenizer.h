@@ -6,6 +6,8 @@
 #ifndef StringTokenizer_H
 #define StringTokenizer_H
 
+#include <boost/tokenizer.hpp>
+#include <stdio.h>
 
 class StringTokenizer 
 {
@@ -16,6 +18,10 @@ public:
 	 */
 	StringTokenizer();
 
+	/**
+	 * @brief Tokenizes the input text into the output vector.
+	 */
+	void Tokenize(std::string text, std::vector<std::string> & tokenizedString);
 };
 
 #endif //StringTokenizer_H

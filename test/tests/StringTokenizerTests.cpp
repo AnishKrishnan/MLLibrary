@@ -27,5 +27,11 @@ public:
 
 TEST_F(StringTokenizerTests, BasicTokenizeTest)
 {
-	ASSERT_EQ(true, false);
+	std::string testData = "aa aa aa aa";
+	std::vector<std::string> tokenizedFeatures;
+	std::vector<std::string> expectedFeatures(4, "aa");
+
+	tokenizer.Tokenize(testData, tokenizedFeatures);
+
+	ASSERT_EQ(expectedFeatures.size(), tokenizedFeatures.size());
 }
