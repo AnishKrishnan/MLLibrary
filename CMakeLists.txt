@@ -31,6 +31,7 @@ endif()
 # Libraries can be added to the LIBS variable
 # or manually included here.
 include(source.cmake)
+include(source/feature_extractor/tokenizer/StringTokenizer.cmake)
 
 ##### Files #####
 
