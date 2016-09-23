@@ -23,20 +23,33 @@ public:
 	~StringTokenizerTests()
 	{
 	}
+
+	void ValidateTokenization(const std::string testData, const std::vector<std::string> & expectedFeatures)
+	{
+		std::vector<std::string> tokenizedFeatures;
+		tokenizer.Tokenize(testData, tokenizedFeatures);
+
+		ASSERT_EQ(expectedFeatures.size(), tokenizedFeatures.size());
+
+		for (int i = 0; i < expectedFeatures.size(); i++)
+		{
+			ASSERT_EQ(expectedFeatures.at(i), tokenizedFeatures.at(i));
+		}
+	}
 };
 
 TEST_F(StringTokenizerTests, BasicTokenizeTest)
 {
 	std::string testData = "aa aa aa aa";
-	std::vector<std::string> tokenizedFeatures;
 	std::vector<std::string> expectedFeatures(4, "aa");
 
-	tokenizer.Tokenize(testData, tokenizedFeatures);
+	this->ValidateTokenization(testData, expectedFeatures);
+}
 
-	ASSERT_EQ(expectedFeatures.size(), tokenizedFeatures.size());
+TEST_F(StringTokenizerTests, MinWordLengthTest)
+{
+	std::string testData = "aa aa a aa aa";
+	std::vector<std::string> expectedFeatures(4, "aa");
 
-	for (int i = 0; i < expectedFeatures.size(); i++)
-	{
-		ASSERT_EQ(expectedFeatures.at(i), tokenizedFeatures.at(i));
-	}
+	this->ValidateTokenization(testData, expectedFeatures);
 }

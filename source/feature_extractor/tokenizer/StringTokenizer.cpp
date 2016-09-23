@@ -2,7 +2,7 @@
 
 StringTokenizer::StringTokenizer(uint8_t minTokenLength)
 {
-	_minTokenLength = minTokenLength;
+	this->_minTokenLength = minTokenLength;
 }
 
 void StringTokenizer::Tokenize(std::string text, std::vector<std::string> & tokenizedString)
@@ -11,6 +11,9 @@ void StringTokenizer::Tokenize(std::string text, std::vector<std::string> & toke
 
 	for (boost::tokenizer<>::iterator it = token.begin(); it != token.end(); it++)
 	{
-		tokenizedString.push_back(*it);
+		if ((*it).size() >= this->_minTokenLength)
+		{
+			tokenizedString.push_back(*it);	
+		}
 	}
 }
