@@ -34,4 +34,9 @@ TEST_F(StringTokenizerTests, BasicTokenizeTest)
 	tokenizer.Tokenize(testData, tokenizedFeatures);
 
 	ASSERT_EQ(expectedFeatures.size(), tokenizedFeatures.size());
+
+	for (int i = 0; i < expectedFeatures.size(); i++)
+	{
+		ASSERT_EQ(expectedFeatures.at(i), tokenizedFeatures.at(i));
+	}
 }
