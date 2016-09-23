@@ -53,3 +53,11 @@ TEST_F(StringTokenizerTests, MinWordLengthTest)
 
 	this->ValidateTokenization(testData, expectedFeatures);
 }
+
+TEST_F(StringTokenizerTests, RemoveNonAlphabetCharacterTests)
+{
+	std::string testData = "aa, aa. aa! aa: aa;";
+	std::vector<std::string> expectedFeatures(5, "aa");
+
+	this->ValidateTokenization(testData, expectedFeatures);
+}
