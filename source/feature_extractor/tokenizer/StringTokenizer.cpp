@@ -1,8 +1,8 @@
 #include "StringTokenizer.h"
 
-StringTokenizer::StringTokenizer()
+StringTokenizer::StringTokenizer(uint8_t minTokenLength)
 {
-
+	_minTokenLength = minTokenLength;
 }
 
 void StringTokenizer::Tokenize(std::string text, std::vector<std::string> & tokenizedString)

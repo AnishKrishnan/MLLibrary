@@ -8,7 +8,7 @@ public:
 
 	StringTokenizer tokenizer;
 	
-	StringTokenizerTests()
+	StringTokenizerTests() : tokenizer(2)
 	{
 	}
 
