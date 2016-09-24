@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include "ITokenizer.h"
 #include "IVectorizer.h"
+#include "Vocabulary.h"
 
 class CountVectorizer : public IVectorizer
 {
@@ -26,9 +27,15 @@ public:
 	 */
 	virtual void Fit (const std::vector<std::string> & corpus);
 
+	/**
+	* @brief Gets the current vocabulary
+	*/
+	virtual IVocabulary * GetVocabulary ();
+
 private:
 
 	ITokenizer * _tokenizer;
+	Vocabulary _vocab;
 };
 
 #endif //CountVectorizer_H

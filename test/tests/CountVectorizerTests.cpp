@@ -31,5 +31,7 @@ TEST_F(CountVectorizerTests, BasicFitTest)
 
 	countVectorizer->Fit(corpus);
 
-	ASSERT_EQ(true, false);
+	IVocabulary * vocab = countVectorizer->GetVocabulary();
+
+	ASSERT_EQ(4, vocab->GetSize());
 }
