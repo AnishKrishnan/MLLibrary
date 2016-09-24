@@ -7,13 +7,13 @@ Vocabulary::Vocabulary() : _vocabulary()
 
 int Vocabulary::Add(const std::string & token)
 {
-	std::map<std::string, int>::const_iterator it = _vocabulary.find(token);
+	int existingIndex = this->Get(token);
 
-	if (it != _vocabulary.end())
+	if (existingIndex != -1)
 	{
-		return _vocabulary[token];
+		return existingIndex;
 	}
-	
+
 	int newIndex = _currentIndexValue;
 	_vocabulary[token] = newIndex;
 	_currentIndexValue++;
@@ -29,7 +29,7 @@ int Vocabulary::Get(const std::string & token)
 	{
 		return _vocabulary[token];
 	}
-		
+
 	return -1;
 }
 
