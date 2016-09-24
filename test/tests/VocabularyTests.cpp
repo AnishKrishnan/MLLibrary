@@ -41,3 +41,13 @@ TEST_F(VocabularyTests, GetOneWord)
 
 	ASSERT_EQ(expectedIndex, actualIndex);
 }
+
+TEST_F(VocabularyTests, AddDuplicateWordTest)
+{
+	std::string testWord = "test";
+
+	int firstIndex = vocab->Add(testWord);
+	int duplicateIndex = vocab->Add(testWord);
+
+	ASSERT_EQ(firstIndex, duplicateIndex);
+}
