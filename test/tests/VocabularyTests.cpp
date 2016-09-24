@@ -51,3 +51,13 @@ TEST_F(VocabularyTests, AddDuplicateWordTest)
 
 	ASSERT_EQ(firstIndex, duplicateIndex);
 }
+
+TEST_F(VocabularyTests, GetSizeTest)
+{
+	std::string testWord = "test";
+
+	vocab->Add(testWord);
+	int size = vocab->GetSize();
+
+	ASSERT_EQ(1, size);
+}

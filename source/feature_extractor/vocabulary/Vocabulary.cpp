@@ -35,5 +35,5 @@ int Vocabulary::Get(const std::string & token)
 
 int Vocabulary::GetSize()
 {
-	return -1;
+	return _vocabulary.size();
 }
