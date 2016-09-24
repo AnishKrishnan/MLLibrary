@@ -61,3 +61,15 @@ TEST_F(VocabularyTests, GetSizeTest)
 
 	ASSERT_EQ(1, size);
 }
+
+TEST_F(VocabularyTests, GetDuplicateWordSizeTest)
+{
+	std::string testWord = "test";
+
+	vocab->Add(testWord);
+	vocab->Add(testWord);
+
+	int size = vocab->GetSize();
+
+	ASSERT_EQ(1, size);
+}
