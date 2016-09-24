@@ -11,7 +11,7 @@
 #include <stdint.h>
 #include "ITokenizer.h"
 
-class StringTokenizer : ITokenizer
+class StringTokenizer : public ITokenizer
 {
 public:
 
