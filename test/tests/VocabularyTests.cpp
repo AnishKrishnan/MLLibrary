@@ -31,3 +31,13 @@ TEST_F(VocabularyTests, AddOneWord)
 	int actualIndex = vocab->Add(testWord);
 	ASSERT_EQ(expectedIndex, actualIndex);
 }
+
+TEST_F(VocabularyTests, GetOneWord)
+{
+	std::string testWord = "test";
+
+	int expectedIndex = vocab->Add(testWord);
+	int actualIndex = vocab->Get(testWord);
+
+	ASSERT_EQ(expectedIndex, actualIndex);
+}

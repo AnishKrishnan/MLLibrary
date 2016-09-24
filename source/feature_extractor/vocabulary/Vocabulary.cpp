@@ -23,6 +23,13 @@ int Vocabulary::Add(const std::string & token)
 
 int Vocabulary::Get(const std::string & token)
 {
+	std::map<std::string, int>::const_iterator it = _vocabulary.find(token);
+
+	if (it != _vocabulary.end())
+	{
+		return _vocabulary[token];
+	}
+		
 	return -1;
 }
 
