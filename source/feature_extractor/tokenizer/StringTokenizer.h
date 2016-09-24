@@ -9,8 +9,9 @@
 #include <boost/tokenizer.hpp>
 #include <stdio.h>
 #include <stdint.h>
+#include "ITokenizer.h"
 
-class StringTokenizer 
+class StringTokenizer : ITokenizer
 {
 public:
 
@@ -22,7 +23,7 @@ public:
 	/**
 	 * @brief Tokenizes the input text into the output vector.
 	 */
-	void Tokenize(std::string text,	 std::vector<std::string> & tokenizedString);
+	virtual void Tokenize(std::string text,	std::vector<std::string> & tokenizedString);
 
 private:
 
