@@ -14,12 +14,12 @@ public:
 	/**
 	* @brief accessor to a specific element in the matrix
 	*/
-	virtual T operator () (int row, int column) = 0;
+	virtual T Get (int row, int column) = 0;
 
 	/**
-	* @brief accessor to a reference to a specific element in the matrix. Used for setting.
+	* @brief setter for the matrix value.
 	*/
-	virtual T & operator() (int row, int column) = 0;
+	virtual void Set (int row, int column, T & value) = 0;
 
 };
 

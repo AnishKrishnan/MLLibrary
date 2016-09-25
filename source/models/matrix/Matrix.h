@@ -7,8 +7,9 @@
 #define Matrix_H
 
 #include <boost/numeric/ublas/matrix.hpp>
+#include "IMatrix.h"
 
-template<typename T> class Matrix
+template<typename T> class Matrix : public IMatrix<T>
 {
 public:
 
@@ -20,12 +21,12 @@ public:
 	/**
 	* @brief accessor to a specific element in the matrix
 	*/
-	T Get (int row, int column);
+	virtual T Get (int row, int column);
 
 	/**
 	* @brief accessor to a reference to a specific element in the matrix. Used for setting.
 	*/
-	void Set (int row, int column, T & value);
+	virtual void Set (int row, int column, T & value);
 
 
 private:
