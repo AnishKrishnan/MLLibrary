@@ -1,0 +1,34 @@
+#include <gtest/gtest.h>
+#include "Matrix.h"
+
+class MatrixTests : public::testing::Test
+{
+public:
+
+	Matrix<int> * mat;
+
+	MatrixTests() 
+	{
+	}
+
+	void SetUp()
+	{
+		mat = new Matrix<int>(3, 3);	
+	}
+
+	void TearDown()
+	{
+		delete mat;
+		mat = NULL;
+	}
+};
+
+TEST_F(MatrixTests, GetandSetTest)
+{
+	int expectedValue = 42;
+	mat->Set(1, 1, expectedValue);
+
+	int actualValue = mat->Get(1, 1);
+
+	ASSERT_EQ(expectedValue, actualValue);
+}
