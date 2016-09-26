@@ -26,6 +26,11 @@ public:
 	*/
 	virtual int GetRowSize () = 0;
 
+	/**
+	* @brief get column size
+	*/
+	virtual int GetColumnSize() = 0;
+
 };
 
 #endif //IMatrix_H

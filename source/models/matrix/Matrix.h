@@ -33,6 +33,11 @@ public:
 	*/
 	virtual int GetRowSize ();
 
+	/**
+	* @brief get column size
+	*/
+	virtual int GetColumnSize ();
+
 
 private:
 
@@ -57,6 +62,11 @@ template <typename T> void Matrix<T>::Set(int row, int column, T & value)
 template <typename T> int Matrix<T>::GetRowSize()
 {
 	return _matrix.size1();
+}
+
+template <typename T> int Matrix<T>::GetColumnSize()
+{
+	return _matrix.size2();
 }
 
 #endif //Matrix_H

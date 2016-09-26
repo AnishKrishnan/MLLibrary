@@ -40,3 +40,11 @@ TEST_F(MatrixTests, GetRowSizeTest)
 
 	ASSERT_EQ(expectedValue, actualValue);
 }
+
+TEST_F(MatrixTests, GetColumnSizeTest)
+{
+	int expectedValue = 4;
+	int actualValue = mat->GetColumnSize();
+
+	ASSERT_EQ(expectedValue, actualValue);
+}
