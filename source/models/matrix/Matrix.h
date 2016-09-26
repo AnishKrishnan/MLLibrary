@@ -28,6 +28,11 @@ public:
 	*/
 	virtual void Set (int row, int column, T & value);
 
+	/**
+	* @brief get row size.
+	*/
+	virtual int GetRowSize ();
+
 
 private:
 
@@ -47,6 +52,11 @@ template <typename T> T Matrix<T>::Get(int row, int column)
 template <typename T> void Matrix<T>::Set(int row, int column, T & value)
 {
 	_matrix(row, column) = value;
+}
+
+template <typename T> int Matrix<T>::GetRowSize()
+{
+	return _matrix.size1();
 }
 
 #endif //Matrix_H

@@ -21,6 +21,11 @@ public:
 	*/
 	virtual void Set (int row, int column, T & value) = 0;
 
+	/**
+	* @brief get row size.
+	*/
+	virtual int GetRowSize () = 0;
+
 };
 
 #endif //IMatrix_H

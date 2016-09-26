@@ -13,7 +13,7 @@ public:
 
 	void SetUp()
 	{
-		mat = new Matrix<int>(3, 3);	
+		mat = new Matrix<int>(3, 4);	
 	}
 
 	void TearDown()
@@ -29,6 +29,14 @@ TEST_F(MatrixTests, GetandSetTest)
 	mat->Set(1, 1, expectedValue);
 
 	int actualValue = mat->Get(1, 1);
+
+	ASSERT_EQ(expectedValue, actualValue);
+}
+
+TEST_F(MatrixTests, GetRowSizeTest)
+{
+	int expectedValue = 3;
+	int actualValue = mat->GetRowSize();
 
 	ASSERT_EQ(expectedValue, actualValue);
 }
