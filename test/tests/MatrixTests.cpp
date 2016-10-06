@@ -23,6 +23,17 @@ public:
 	}
 };
 
+TEST_F(MatrixTests, ConstructorTest)
+{
+	for (int i = 0; i < mat->GetRowSize(); i++)
+	{
+		for (int j = 0; j < mat->GetColumnSize(); j++)
+		{
+			ASSERT_EQ(0, mat->Get(i, j));
+		}
+	}
+}
+
 TEST_F(MatrixTests, GetandSetTest)
 {
 	int expectedValue = 42;

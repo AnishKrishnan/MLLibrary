@@ -46,7 +46,13 @@ private:
 
 template <typename T> Matrix<T>::Matrix(int rowSize, int columnSize) : _matrix(rowSize, columnSize)
 {
-
+	for (int i = 0; i < this->GetRowSize(); i++)
+	{
+		for (int j = 0; j < this->GetColumnSize(); j++)
+		{
+			_matrix(i, j) = 0;
+		}
+	}
 }
 
 template <typename T> T& Matrix<T>::Get(int row, int column)
