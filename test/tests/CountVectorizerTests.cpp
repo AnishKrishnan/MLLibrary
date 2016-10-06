@@ -84,3 +84,20 @@ TEST_F(CountVectorizerTests, MultipleDocumentTransformTest)
 		ASSERT_EQ(1, features->Get(1, i));
 	}	
 }
+
+TEST_F(CountVectorizerTests, DuplicateValuesTest)
+{
+	std::vector<std::string> corpus;
+	corpus.push_back("aa bb cc dd aa bb cc dd");
+
+	countVectorizer->Fit(corpus);
+	IMatrix<int> * features = countVectorizer->Transform(corpus);
+
+	ASSERT_EQ(1, features->GetRowSize());
+	ASSERT_EQ(4, features->GetColumnSize());
+
+	for (int i = 0; i < 4; i++)
+	{
+		ASSERT_EQ(2, features->Get(0, i));
+	}
+}
