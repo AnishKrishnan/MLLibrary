@@ -42,10 +42,6 @@ IMatrix<int> * CountVectorizer::Transform(const std::vector<std::string> & corpu
 			{
 				mat->operator()(documentIndex, featureIndex)++;
 			}
-			else
-			{
-				mat->operator()(documentIndex, featureIndex) = 0;
-			}
 		}
 
 		tokens.clear();
