@@ -31,6 +31,14 @@ public:
 	*/
 	virtual int GetColumnSize() = 0;
 
+	/**
+	* @brief parenthesis override
+	*/
+	virtual T operator()(int row, int column)
+	{
+		return this->Get(row, column);
+	}
+
 };
 
 #endif //IMatrix_H

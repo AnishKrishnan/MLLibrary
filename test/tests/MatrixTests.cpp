@@ -48,3 +48,13 @@ TEST_F(MatrixTests, GetColumnSizeTest)
 
 	ASSERT_EQ(expectedValue, actualValue);
 }
+
+TEST_F(MatrixTests, ParenthesisGetOperator)
+{
+	int expectedValue = 4;
+	mat->Set(1, 1, expectedValue);
+
+	int actualValue = mat->operator()(1, 1);
+
+	ASSERT_EQ(expectedValue, actualValue);
+}
