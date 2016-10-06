@@ -21,7 +21,7 @@ public:
 	/**
 	* @brief accessor to a specific element in the matrix
 	*/
-	virtual T Get (int row, int column);
+	virtual T& Get (int row, int column);
 
 	/**
 	* @brief accessor to a reference to a specific element in the matrix. Used for setting.
@@ -49,7 +49,7 @@ template <typename T> Matrix<T>::Matrix(int rowSize, int columnSize) : _matrix(r
 
 }
 
-template <typename T> T Matrix<T>::Get(int row, int column)
+template <typename T> T& Matrix<T>::Get(int row, int column)
 {
 	return _matrix(row, column);
 }

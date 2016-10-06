@@ -14,7 +14,7 @@ public:
 	/**
 	* @brief accessor to a specific element in the matrix
 	*/
-	virtual T Get (int row, int column) = 0;
+	virtual T& Get (int row, int column) = 0;
 
 	/**
 	* @brief setter for the matrix value.
@@ -34,7 +34,7 @@ public:
 	/**
 	* @brief parenthesis override
 	*/
-	virtual T operator()(int row, int column)
+	virtual T& operator()(int row, int column)
 	{
 		return this->Get(row, column);
 	}
