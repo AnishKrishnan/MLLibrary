@@ -1,5 +1,6 @@
 #include "BayesHelper.h"
 #include "Matrix.h"
+#include <stdio.h> 
 #include <stdint.h>
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
@@ -55,4 +56,13 @@ TEST_F(BayesHelperTests, CalculateVariance)
 	double actual = BayesHelper<int>::CalculateVariance(&mat, labels, mean, 1, 1);
 
 	ASSERT_EQ(expectedValue, actual);
+}
+
+TEST_F(BayesHelperTests, CalculateVarianceWithNoLables)
+{
+	double expectedValue = 0.0;
+	double mean = BayesHelper<int>::CalculateMean(&mat, labels, 0, 0);
+	double actual = BayesHelper<int>::CalculateVariance(&mat, labels, mean, 0, 0);
+
+	ASSERT_EQ(expectedValue, actual);	
 }

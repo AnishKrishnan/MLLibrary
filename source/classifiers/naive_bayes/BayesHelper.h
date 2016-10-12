@@ -62,7 +62,7 @@ template<typename T> double BayesHelper<T>::CalculateVariance(IMatrix<T> * mat, 
 		}
 	}
 
-	if (!count)
+	if (count <= 1)
 	{
 		return 0.0;
 	}
