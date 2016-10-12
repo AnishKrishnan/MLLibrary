@@ -34,6 +34,11 @@ template<typename T> double BayesHelper<T>::CalculateMean(IMatrix<T> * mat, uint
 		}
 	}
 
+	if (!count)
+	{
+		return 0.0;
+	}
+	
 	return sum / count;
 }
 
