@@ -7,13 +7,16 @@
 class BayesHelperTests : public::testing::Test
 {
 public:
-	BayesHelperTests() : mat(3 ,2)
+	BayesHelperTests() : mat(4 ,2)
 	{
-		for (int i = 0; i < mat.GetRowSize(); i++)
+		for (int i = 0; i < mat.GetRowSize() - 1; i++)
 		{
 			mat(i, 1) = i + 1;
 			labels[i] = 1;
 		}
+
+		mat(3, 0) = 4;
+		labels[3] = 0;
 	}
 
 	Matrix<int> mat;
