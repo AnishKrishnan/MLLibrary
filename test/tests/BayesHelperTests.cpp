@@ -39,3 +39,11 @@ TEST_F(BayesHelperTests, CalculateMeanWithNoLabels)
 
 	ASSERT_EQ(expectedValue, actual);
 }
+
+TEST_F(BayesHelperTests, CalculateMeanWithSpecificLabel)
+{
+	double expectedValue = 4.0;
+	double actual = BayesHelper<int>::CalculateMean(&mat, labels, 0, 0);
+
+	ASSERT_EQ(expectedValue, actual);
+}
