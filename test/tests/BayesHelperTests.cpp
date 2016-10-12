@@ -47,3 +47,12 @@ TEST_F(BayesHelperTests, CalculateMeanWithSpecificLabel)
 
 	ASSERT_EQ(expectedValue, actual);
 }
+
+TEST_F(BayesHelperTests, CalculateVariance)
+{
+	double expectedValue = 1.0;
+	double mean = BayesHelper<int>::CalculateMean(&mat, labels, 1, 1);
+	double actual = BayesHelper<int>::CalculateVariance(&mat, labels, mean, 1, 1);
+
+	ASSERT_EQ(expectedValue, actual);
+}
